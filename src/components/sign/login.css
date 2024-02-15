@@ -1,0 +1,154 @@
+.m{
+    height: 40em;
+    width: 100%;
+    /* border: 2px solid red; */
+}
+.m1{
+    position: relative;
+    top: 6em;
+    left: 24em;
+}
+.m2{
+    color: brown;
+    font-variant: small-caps;
+    width: 30%;
+    position: relative;
+    left: 19em;
+    top: 2em;
+}
+.m3{
+    position: relative;
+    top: 4em;
+    left: 6em;
+    width: 60%;
+    margin-top: 20px;
+    background: transparent;
+    color: goldenrod;
+    border: none;
+    border-bottom: 2px solid grey;
+
+}
+.m4{
+    height: 40px;
+    position: relative;
+    top: 6em;
+    left: 6em;
+    width: 60%;
+    border-radius: 5px;
+    background-color: goldenrod;
+
+}
+.m5{
+    color: rgb(192, 15, 15);
+    position: relative;
+    top: 8em;
+    left: 6.4em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration:underline;
+}
+.m6{
+    color: blue;
+}
+
+
+
+
+
+
+@media screen and (min-width:320px) and (max-width:397px){
+    .m1{
+        left: 1em;
+        top: 3em;
+    }
+    .m2{
+        left: 5em;
+        width: 50%;
+        top: 1em;
+    }
+    .m3{
+        left: 4em;
+    }
+    .m4{
+        left: 4em;
+    }
+    .m5{
+        left:4em ;
+    }
+}
+@media screen and (min-width:400px) and (max-width:426px){
+    .m1{
+        left: 1.5em;
+        top: 3em;
+    }
+    .m2{
+        left: 6em;
+        width: 50%;
+        top: 1em;
+    }
+    .m3{
+        left: 5em;
+    }
+    .m4{
+        left: 5em;
+    }
+    .m5{
+        left:5em ;
+    }
+}
+@media screen and (min-width:601px) and (max-width:800px){
+    .m1{
+        left: 7em;
+    }
+    .m2{
+        left: 11em;
+    }
+    .m5{
+        left:11em ;
+    }
+}
+@media screen and (min-width:801px) and (max-width:1025px){
+    .m1{
+        left: 20em;
+    }
+    .m2{
+        left: 15em;
+    }
+    .m3{
+        left: 4em;
+    }
+    .m4{
+        left: 4em;
+    }
+    .m5{
+        left:4.4em ;
+    }
+}
+@media screen and (min-width:1300px) and (max-width:1441px){
+    
+    .m{
+        height: 52em;
+
+    }
+    .m1{
+        top: 12em;
+        left: 28em;
+    }
+    .m2{
+        left: 22em;
+        top: 4em;
+    }
+}   
+@media screen and (min-width:1530px){
+    .m{
+        height: 45em;
+
+    }
+    .m1{
+        top: 8em;
+        left: 30em;
+    }
+    .m2{
+        left: 24em;
+        top: 2em;
+    }
+}

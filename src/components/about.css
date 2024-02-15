@@ -1,0 +1,127 @@
+.b{
+    height: 500px;
+    width: 100%;
+    background-attachment: fixed;
+    z-index: -1;
+    /* border: 2px solid red; */
+   
+}
+.b1{
+    color: rgb(200, 87, 6);
+    font-variant: small-caps;
+    position: relative;
+    left: 24em;
+    top: 2em;
+    font-size: 24px;
+    width: 20%;
+}
+.b2{
+    width: 50%;
+    color: aliceblue;
+    position: relative;
+    left: 13.3em;
+    top: 2.0em;
+    font-weight: 900;
+    font-size: x-large;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 34px;
+}
+.b3{
+    height: 300px;
+    width: 80%;
+    /* border: 2px solid blue; */
+    position: relative;
+    top: 6em;
+    left: 8em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+@media screen and (min-width:320px) and (max-width:397px){
+    .b1{
+        left: 4em;
+        width: 50%;
+    }
+    .b{
+        height: 70em;
+    }
+    .b2{
+        left: 1em;
+        top: 2.3em;
+        font-size: 25px;
+        width: 85%;
+    }
+    .b3{
+        width: 93%;
+        left: 0.3em;
+        display: block;
+        height: 50em;
+    }
+}
+@media screen and (min-width:400px) and (max-width:426px){
+    .b1{
+        left: 5em;
+        width: 50%;
+    }
+    .b{
+        height: 70em;
+    }
+    .b2{
+        left: 1.4em;
+        top: 2.3em;
+        font-size: 25px;
+        width: 85%;
+    }
+    .b3{
+        width: 93%;
+        left: 0.3em;
+        display: block;
+        height: 50em;
+    }
+}
+@media screen and (min-width:601px) and (max-width:800px){
+    .b1{
+        left: 12em;
+        width: 50%;
+    }
+    .b2{
+        left: 5em;
+        width: 77%;
+    }
+    .b3{
+        width: 93%;
+        left: 1.7em;
+    }
+}
+@media screen and (min-width:801px) and (max-width:1025px){
+    .b1{
+        left: 17em;
+        width: 50%;
+    }
+    .b2{
+        left: 8em;
+    }
+    .b3{
+        width: 93%;
+        left: 1.7em;
+    }
+}
+@media screen and (min-width:1300px) and (max-width:1441px){
+    .b1{
+        left: 25em;
+        width: 50%;
+    }
+}
+@media screen and (min-width:1502px){
+    .b1{
+        left: 28em;
+        width: 50%;
+    }
+    .b2{
+        left: 16em;
+    }
+    .b3{
+        left: 12em;
+    }
+}

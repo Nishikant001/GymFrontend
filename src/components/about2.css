@@ -1,0 +1,114 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap'); */
+.d{
+    height: 46em;
+    width: 100%;
+    /* border: 2px solid red; */
+    background-attachment: fixed;
+    overflow: hidden;
+    z-index: -1;
+}
+.d1{
+    color: red;
+    position: relative;
+    left: 22em;
+    top: -11em;
+    width: 30%;
+    font-size: 30px;
+}
+.d img{
+    position: relative;
+    top: 9em;
+    left: 9em;
+    aspect-ratio: 2/3;
+    /* filter: drop-shadow(16px 16px 7px rgb(105, 0, 0)); */
+    opacity: 0.8;
+    
+}
+.d2{
+    color: white;
+    width: 40%;
+    position: relative;
+    left: 48em;
+    top: -19rem;
+    /* letter-spacing: 2px; */
+    float: left;
+    font-family:"Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: small;
+}
+
+
+
+
+
+
+@media screen and (min-width:320px) and (max-width:397px){
+    .d{
+        height: 60em;
+    }
+    .d img{
+        left: 5em;
+        height: 300px;
+        width: 235px;
+    }
+    .d1{
+        left: 4em;
+        top: -9em;
+        width: 100%;
+    }
+    .d2 {
+        top: 12em;
+        left: 2em;
+        width: 100%;
+
+    }
+}
+@media screen and (min-width:400px) and (max-width:426px){
+    .d img{
+        left: 5.6em;
+        height: 300px;
+        width: 235px;
+    }
+    .d{
+        height: 60em;
+    }
+    .d2 {
+        top: 12em;
+        left: 1em;
+        width: 100%;
+
+    }
+    .d1{
+        left: 5em;
+        top: -9em;
+        width: 40%;
+    }
+}
+@media screen and (min-width:601px) and (max-width:800px){
+    .d img{
+        left: 13em;
+        height: 400px;
+        width: 295px;
+    }
+    .d1{
+        left: 10em;
+        top: -12em;
+        width: 50%;
+
+    }
+    .d{
+        height: 60em;
+    }
+    .d2 {
+        top: 12em;
+        left: 9em;
+        width: 70%;
+
+    }
+}
+@media screen and (min-width:801px) and (max-width:1025px){}
+@media screen and (min-width:1300px) and (max-width:1441px){}
+@media screen and (min-width:1502px){}
