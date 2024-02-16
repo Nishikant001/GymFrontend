@@ -3,6 +3,7 @@ import "./contact.css";
 import Nav3 from "../components/Nav3";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+let URL='https://gymbackend12.onrender.com'
 
 function Contact() {
   
@@ -25,7 +26,7 @@ function Contact() {
         e.preventDefault()
         console.log(con)
         let {name,email,phone,comment}=con
-        let comm=await fetch(`https://gymbackend12.onrender.com/api/user/contact`,{
+        let comm=await fetch(`${URL}/api/user/contact`,{
           method:'POST',
           body:JSON.stringify({name,email,phone,comment}),
           headers:{

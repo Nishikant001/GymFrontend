@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import './login.css'
 import { Link, json, useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
+let URL='https://gymbackend12.onrender.com'
 
 function Login() {
    let navigate=useNavigate()
@@ -27,7 +28,7 @@ function Login() {
         
         
         // let {email,password}=log
-        let responce=await fetch(`https://gymbackend12.onrender.com/api/user/login`,{
+        let responce=await fetch(`${URL}/api/user/login`,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"

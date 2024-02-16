@@ -5,8 +5,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './sign.css'
 import { useNavigate } from 'react-router';
+let URL='https://gymbackend12.onrender.com'
 
 const Signin = (props) => {
+
     let navigate=useNavigate()
     
     let[sign,setSign]=useState({
@@ -46,7 +48,7 @@ const Signin = (props) => {
         }else{
          
         let {name,email,phone,username,password}=sign
-        let data=await fetch(`https://gymbackend12.onrender.com/api/user/signup`,{
+        let data=await fetch(`${URL}/api/user/signup`,{
             method:"POST",
             headers:{
                 'Content-Type':'application/json'
