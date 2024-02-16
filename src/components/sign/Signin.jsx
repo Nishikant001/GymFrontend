@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './sign.css'
 
 const Signin = (props) => {
+    let signdata='https://gymbackend-2apj.onrender.com'
     let[sign,setSign]=useState({
         name:'',
         email:'',
@@ -44,7 +45,7 @@ const Signin = (props) => {
             toast.success('Register Sucessfull')
         }
         let {name,email,phone,username,password}=sign
-        let res=await fetch('http://localhost:7000/api/user/signup',{
+        let res=await fetch(`${signdata}/api/user/signup`,{
             method:'POST',
             body:JSON.stringify( {name,email,phone,username,password}),
             headers:{

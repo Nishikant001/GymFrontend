@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Contact() {
+  let formdata='https://gymbackend-2apj.onrender.com'
     let[con,setCon]=useState({
         name:'',
         email:'',
@@ -24,7 +25,7 @@ function Contact() {
         e.preventDefault()
         console.log(con)
         let {name,email,phone,comment}=con
-        let comm=await fetch('http://localhost:7000/api/user/contact',{
+        let comm=await fetch(`${formdata}/api/user/contact`,{
           method:'POST',
           body:JSON.stringify({name,email,phone,comment}),
           headers:{

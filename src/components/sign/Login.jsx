@@ -4,6 +4,7 @@ import { Link, json } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 
 function Login() {
+    let logindata='https://gymbackend-2apj.onrender.com'
     let[log,setLog]=useState({
        
         email:'',
@@ -26,7 +27,7 @@ function Login() {
         // console.log(log)
 
         let {email,password}=log
-        let logi=await fetch('http://localhost:7000/api/user/login',{
+        let logi=await fetch(`${logindata}/api/user/login`,{
             method:'POST',
             body:JSON.stringify({email,password}),
             headers:{
