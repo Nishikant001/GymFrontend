@@ -25,7 +25,7 @@ function Contact() {
         e.preventDefault()
         console.log(con)
         let {name,email,phone,comment}=con
-        let comm=await fetch(`http://localhost:7000/api/user/contact`,{
+        let comm=await fetch(`https://gymbackend12.onrender.com/api/user/contact`,{
           method:'POST',
           body:JSON.stringify({name,email,phone,comment}),
           headers:{

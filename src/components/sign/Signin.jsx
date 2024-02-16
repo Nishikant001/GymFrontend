@@ -46,7 +46,7 @@ const Signin = (props) => {
         }else{
          
         let {name,email,phone,username,password}=sign
-        let data=await fetch(`http://localhost:7000/api/user/signup`,{
+        let data=await fetch(`https://gymbackend12.onrender.com/api/user/signup`,{
             method:"POST",
             headers:{
                 'Content-Type':'application/json'

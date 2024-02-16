@@ -27,7 +27,7 @@ function Login() {
         
         
         // let {email,password}=log
-        let responce=await fetch(`http://localhost:7000/api/user/login`,{
+        let responce=await fetch(`https://gymbackend12.onrender.com/api/user/login`,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
