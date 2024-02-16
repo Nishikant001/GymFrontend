@@ -29,7 +29,7 @@ function Contact() {
           method:'POST',
           body:JSON.stringify({name,email,phone,comment}),
           headers:{
-            "Content-Type":"application/json"
+            'Content-Type':'application/json'
           }
         })
         comm=await comm.json

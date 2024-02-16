@@ -44,15 +44,13 @@ const Signin = (props) => {
         }else if(password1!==confirm){
             toast.error("password dosen't match")
         }else{
-            toast.success('Register Sucessfull')
-            navigate('/login',{replace:true})
-        }
+         
         let {name,email,phone,username,password}=sign
         let res=await fetch(`'https://gymbackend-2apj.onrender.com'/api/user/signup`,{
             method:'POST',
             body:JSON.stringify( {name,email,phone,username,password}),
             headers:{
-            "Content-Type":"application/json",
+            'Content-Type':'application/json'
             }
            
            
@@ -62,6 +60,15 @@ const Signin = (props) => {
         })
         res=await res.json
         localStorage.setItem('user',JSON.stringify( res))
+
+        if (Response.ok) {
+            toast.success('Register Sucessfull')
+        navigate('/login',{replace:true})
+            
+        }else{
+            toast.error('Registration Faild')
+        }
+    }
         
         // console.log(res)
             
