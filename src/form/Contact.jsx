@@ -3,7 +3,7 @@ import "./contact.css";
 import Nav3 from "../components/Nav3";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-let URL='https://gymbackend12.onrender.com'
+let URL='https://gymbackend63.onrender.com'
 
 function Contact() {
   
