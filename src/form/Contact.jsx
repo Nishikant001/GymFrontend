@@ -15,7 +15,7 @@ function Contact() {
 
     function handleChange(e) {
         setCon({
-            ...con,[e.target.name]:[e.target.value]
+            ...con,[e.target.name]:e.target.value
             
         })
         
@@ -25,19 +25,21 @@ function Contact() {
         e.preventDefault()
         console.log(con)
         let {name,email,phone,comment}=con
-        let comm=await fetch(`'https://gymbackend-2apj.onrender.com'/api/user/contact`,{
+        let comm=await fetch(`http://localhost:7000/api/user/contact`,{
           method:'POST',
           body:JSON.stringify({name,email,phone,comment}),
           headers:{
             'Content-Type':'application/json'
           }
         })
-        comm=await comm.json
+        comm=await comm.json()
         localStorage.setItem('user3',JSON.stringify(comm))
-        // if(Response.ok){
-          toast.success('message send sucessfully')
-        // }else{
+        // if(!comm.ok){
         //   toast.error('Please Fill Details Correctly')
+          
+        // }else{
+          toast.success('message send sucessfully')
+          
         // }
         
       } catch (error) {

@@ -15,35 +15,48 @@ function Login() {
 
     function handleChange(e) {
         setLog({
-            ...log,[e.target.name]:[e.target.value]
+            ...log,[e.target.name]:e.target.value
             
         })
 
         
     }
-   async function Login(e) {
+   async function  handleLogin(e) {
+    e.preventDefault()
     try {
-        e.preventDefault()
-        // console.log(log)
-
-        let {email,password}=log
-        let logi=await fetch(`'https://gymbackend-2apj.onrender.com'/api/user/login`,{
-            method:'POST',
-            body:JSON.stringify({email,password}),
+        
+        
+        // let {email,password}=log
+        let responce=await fetch(`http://localhost:7000/api/user/login`,{
+            method:"POST",
             headers:{
-                'Content-Type':'application/json'
-            }
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(log)
+            
 
         })
-        logi= await logi.json
-        localStorage.setItem('user1',JSON.stringify(logi))
-        if (Response.ok) {
-            toast.success('Login Sucessfully')
-            navigate('/main',{replace:true})
+       
+        // localStorage.setItem('user1',JSON.stringify(responce))
+        if (! responce.ok) {
+            toast.error('Invaild credential')
+            console.log(responce.status)
+           
+            
+           
             
         }else{
-            toast.error('Invaild credential')
+            let wow= await responce.json()
+            localStorage.setItem('user1',JSON.stringify(wow))
+            toast.success('Login Sucessfully')
+            // console.log(wow)
+            // navigate()
+            
+            navigate('/main',{replace:true})
+            
+            
         }
+
         
     } catch (error) {
         console.log(error)
@@ -58,16 +71,16 @@ function Login() {
     <div className='m'>
         <ToastContainer/>
         <h3 className="m2">Login Section</h3>
-        <form action="" className='m1' onSubmit={Login}>
+        <form action="" className='m1'  method="POST" onSubmit={handleLogin}>
         {/* <input type="text" name="name" id="sign1" placeholder="Name" className="l3" onChange={handleChange} value={sign.name}required/><br /><br /> */}
             <input type="email" name="email" id="log1" placeholder="email" className="m3" onChange={handleChange} value={log.email} required/><br /><br />
             {/* <input type="number" name="phone" id="sign3" placeholder="Phone" className="l3" onChange={handleChange} value={sign.phone} required/><br /><br /> */}
             {/* <input type="text" name="username" id="sign4" placeholder="username" className="l3" onChange={handleChange} value={sign.username} required/><br /><br /> */}
             <input type="password" name="password" id="log2" placeholder="password" className="m3" onChange={handleChange} value={log.password} required/><br /><br />
             {/* <input type="password" name="Cpassword" id="sign6" placeholder="confirm password" className="l3" onChange={handleChange} value={sign.Cpassword} required/><br /><br /><br /><br /> */}
-            <button className="m4">Register</button>
+            <button className="m4" >LogIn</button>
             <p className='m5'>Don't have any account ?</p>
-            <Link to='/signup'><p className="m5 m6">SignUp</p></Link>
+            <Link to='/signup'><p className="m5 m6" >SignUp</p></Link>
         </form>
       
     </div>

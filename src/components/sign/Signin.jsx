@@ -20,7 +20,7 @@ const Signin = (props) => {
 
     function handleChange(e) {
         setSign({
-            ...sign,[e.target.name]:[e.target.value]
+            ...sign,[e.target.name]:e.target.value
             
         })
         
@@ -40,34 +40,34 @@ const Signin = (props) => {
         if(! email1.endsWith('@gmail.com')){
             toast.error('invaild email')
         }else if(number.length !=10){
-            toast.error('number should be 10 char')
+            toast.error('number should be 10 character')
         }else if(password1!==confirm){
             toast.error("password dosen't match")
         }else{
          
         let {name,email,phone,username,password}=sign
-        let res=await fetch(`'https://gymbackend-2apj.onrender.com'/api/user/signup`,{
-            method:'POST',
-            body:JSON.stringify( {name,email,phone,username,password}),
+        let data=await fetch(`http://localhost:7000/api/user/signup`,{
+            method:"POST",
             headers:{
-            'Content-Type':'application/json'
-            }
+                'Content-Type':'application/json'
+                },
+            body:JSON.stringify({name,email,phone,username,password})
+            
            
            
 
             
 
         })
-        res=await res.json
-        localStorage.setItem('user',JSON.stringify( res))
+        
 
-        if (Response.ok) {
+     
+            let data1=await data.json()
+        localStorage.setItem('user',JSON.stringify( data1))
             toast.success('Register Sucessfull')
-        navigate('/login',{replace:true})
+            navigate('/login',{replace:true})
             
-        }else{
-            toast.error('Registration Faild')
-        }
+       
     }
         
         // console.log(res)
