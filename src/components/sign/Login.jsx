@@ -1,10 +1,10 @@
 import React,{useState} from 'react'
 import './login.css'
-import { Link, json } from 'react-router-dom'
+import { Link, json, useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 
 function Login() {
-    let logindata='https://gymbackend-2apj.onrender.com'
+   let navigate=useNavigate()
     let[log,setLog]=useState({
        
         email:'',
@@ -27,7 +27,7 @@ function Login() {
         // console.log(log)
 
         let {email,password}=log
-        let logi=await fetch(`${logindata}/api/user/login`,{
+        let logi=await fetch(`'https://gymbackend-2apj.onrender.com'/api/user/login`,{
             method:'POST',
             body:JSON.stringify({email,password}),
             headers:{
@@ -39,6 +39,7 @@ function Login() {
         localStorage.setItem('user1',JSON.stringify(logi))
         if (Response.ok) {
             toast.success('Login Sucessfully')
+            navigate('/main',{replace:true})
             
         }else{
             toast.error('Invaild credential')

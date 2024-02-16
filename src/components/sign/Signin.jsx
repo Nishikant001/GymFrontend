@@ -4,9 +4,11 @@ import React , { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './sign.css'
+import { useNavigate } from 'react-router';
 
 const Signin = (props) => {
-    let signdata='https://gymbackend-2apj.onrender.com'
+    let navigate=useNavigate()
+    
     let[sign,setSign]=useState({
         name:'',
         email:'',
@@ -43,9 +45,10 @@ const Signin = (props) => {
             toast.error("password dosen't match")
         }else{
             toast.success('Register Sucessfull')
+            navigate('/login',{replace:true})
         }
         let {name,email,phone,username,password}=sign
-        let res=await fetch(`${signdata}/api/user/signup`,{
+        let res=await fetch(`'https://gymbackend-2apj.onrender.com'/api/user/signup`,{
             method:'POST',
             body:JSON.stringify( {name,email,phone,username,password}),
             headers:{
@@ -59,6 +62,7 @@ const Signin = (props) => {
         })
         res=await res.json
         localStorage.setItem('user',JSON.stringify( res))
+        
         // console.log(res)
             
         } catch (error) {
